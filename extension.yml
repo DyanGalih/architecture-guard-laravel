@@ -2,7 +2,7 @@ schema_version: '1.0'
 extension:
   id: 'architecture-guard-laravel'
   name: 'Architecture Guard — Laravel Adapter'
-  version: '1.0.0'
+  version: '1.0.1'
   description: 'Laravel-specific adapter for architecture-guard. Maps generic architecture rules to Laravel conventions.'
   author: 'DyanGalih'
   repository: 'https://github.com/DyanGalih/architecture-guard-laravel'
