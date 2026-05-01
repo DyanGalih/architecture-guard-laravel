@@ -20,8 +20,9 @@ When reviewing a Laravel project, map generic architecture boundaries to Laravel
 | Entry point for CLI commands | Artisan Commands (`app/Console/Commands/`) |
 | Entry point for queued work | Jobs (`app/Jobs/`) |
 | Entry point for event-driven work | Listeners (`app/Listeners/`) |
-| Entry point for scheduled work | Task Scheduling (`routes/console.php`, `app/Console/Kernel.php`) |
+| Entry point for scheduling | **Modern (11.x+):** `routes/console.php` / **Legacy:** `app/Console/Kernel.php` |
 | Entry point for broadcasting | Broadcast Channels (`routes/channels.php`) |
+| Global Config / Middleware | **Modern (11.x+):** `bootstrap/app.php` / **Legacy:** `app/Http/Kernel.php` |
 | Route-based pages (optional) | Folio Pages (`resources/views/pages/`) |
 
 ### Validation Boundary
@@ -73,6 +74,10 @@ When reviewing a Laravel project, map generic architecture boundaries to Laravel
 | Schema management | Migrations (`database/migrations/`) |
 | Seed data | Seeders and Factories (`database/seeders/`, `database/factories/`) |
 | Cache access | Cache facade or cache driver |
+| **AI Boundary (v13+)** | |
+| AI / LLM Provider Logic | Laravel AI SDK (`app/Services/` or `app/AI/`) |
+| Vector Search / Embeddings | Vector-supported DB drivers or AI SDK integrations |
+| Prompt Templates | Custom Prompt classes or Blade-based templates |
 
 ### Integration Boundary
 
@@ -83,6 +88,7 @@ When reviewing a Laravel project, map generic architecture boundaries to Laravel
 | Queue-based async | Jobs dispatched to queues |
 | Event broadcasting | Broadcasting system (`app/Events/`, channels) |
 | File storage | Storage facade (`Storage::`) |
+| **AI Integration** | **Laravel AI SDK** (Text, Image, Chat, Embeddings) |
 
 ### Presentation Boundary
 
@@ -346,11 +352,13 @@ app/
 ├── Models/                  ← Eloquent models (Domain / Data Boundary)
 ├── Notifications/           ← Notification classes (Integration Boundary)
 ├── Policies/                ← Authorization policies (Domain Boundary)
-├── Providers/               ← Service providers (Framework Bootstrap)
+├── Providers/               ← Service providers (**Modern:** AppServiceProvider only)
 ├── Rules/                   ← Custom validation rules (Validation Boundary)
 ├── Services/                ← Service / Action classes (Application Boundary)
 └── View/Components/         ← Blade components (Presentation Boundary)
-config/                      ← Application configuration
+bootstrap/
+└── app.php                  ← **Modern (11.x+):** Middleware, Exceptions, and Routing config
+config/                      ← Application configuration (Many now optional in 11.x+)
 database/
 ├── factories/               ← Model factories (Testing)
 ├── migrations/              ← Database migrations (Data Boundary)

@@ -2,7 +2,7 @@
 
 > Laravel-specific architectural rules and best practices for Architecture Guard.
 
-[![Version](https://img.shields.io/badge/version-1.1.2-22c55e)](extension.yml)
+[![Version](https://img.shields.io/badge/version-1.1.3-22c55e)](extension.yml)
 [![Architecture Guard](https://img.shields.io/badge/Requires-architecture--guard-2563eb)](https://github.com/DyanGalih/spec-kit-architecture-guard)
 [![Laravel](https://img.shields.io/badge/Laravel-11.x%20--%2013.x-f05340)](https://laravel.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-f59e0b)](LICENSE)
@@ -162,7 +162,7 @@ specify extension add architecture-guard-laravel
 
 ```text
 specify extension add architecture-guard-laravel --from \
-  https://github.com/DyanGalih/architecture-guard-laravel/archive/refs/tags/v1.1.2.zip
+  https://github.com/DyanGalih/architecture-guard-laravel/archive/refs/tags/v1.1.3.zip
 ```
 
 ### Local Development
