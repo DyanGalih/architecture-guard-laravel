@@ -121,7 +121,7 @@ Laravel 13 starter kits ship **four frontend stacks**, all of which change how t
 | `return view(...)` without Inertia or Livewire | **Blade-only** (traditional) |
 | `return response()->json(...)` or API Resources without Inertia | **REST API** |
 
-### Inertia.js Stack (React / Vue / Svelte)
+### Inertia.js Stack (React / Vue / Svelte) [Focus: general]
 
 When the project uses Inertia, controllers return `Inertia::render()` instead of `view()` or `json()`. The response data becomes **the contract between backend and frontend**.
 
@@ -160,7 +160,7 @@ When the project uses Inertia, controllers return `Inertia::render()` instead of
 - Using `usePage()` to access shared data — this is the standard Inertia pattern
 - Simple prop destructuring in page components
 
-### Livewire Stack
+### Livewire Stack [Focus: general]
 
 When the project uses Livewire, components are full-stack: a PHP class + a Blade view. The PHP class handles state, actions, and rendering.
 
@@ -186,7 +186,7 @@ When the project uses Livewire, components are full-stack: a PHP class + a Blade
 - Dispatching events to parent/sibling components
 - Calling Actions or Services for business logic
 
-### REST API (Headless)
+### REST API (Headless) [Focus: api]
 
 When Laravel is used as a REST API only (no Inertia, no Livewire, no Blade):
 
@@ -217,7 +217,7 @@ Detect when a controller:
 - Simple CRUD operations using Eloquent (for small projects, unless the Constitution says otherwise)
 - Preparing typed data arrays for Inertia responses
 
-### Form Requests Over Inline Validation
+### Form Requests Over Inline Validation [Focus: api]
 
 Detect when:
 
@@ -230,7 +230,7 @@ Detect when:
 - Simple 1–3 rule inline validation in low-complexity endpoints
 - Inline validation in Artisan Commands (Form Requests are HTTP-only)
 
-### API Resources Over Raw Arrays
+### API Resources Over Raw Arrays [Focus: api]
 
 Detect when:
 
@@ -243,7 +243,7 @@ Detect when:
 - Using `->only()` or `->makeHidden()` for simple cases with few fields
 - Returning raw arrays in internal/admin-only endpoints if the Constitution allows it
 
-### Eloquent Model Discipline
+### Eloquent Model Discipline [Focus: db]
 
 Detect when:
 
@@ -260,7 +260,7 @@ Detect when:
 - Casts and custom cast classes
 - Simple computed attributes
 
-### Repository Pattern (When Adopted)
+### Repository Pattern [Focus: db] (When Adopted)
 
 If the Constitution adopts a Repository pattern:
 
@@ -303,7 +303,7 @@ Detect when:
 - Locale/timezone setting
 - Header manipulation
 
-### Job and Event Discipline
+### Job and Event Discipline [Focus: async]
 
 Detect when:
 
