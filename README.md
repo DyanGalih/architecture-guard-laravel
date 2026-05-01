@@ -1,6 +1,6 @@
 # 🛡️ Architecture Guard — Laravel Adapter
 
-[![Version](https://img.shields.io/badge/version-1.0.1-22c55e)](extension.yml)
+[![Version](https://img.shields.io/badge/version-1.1.0-22c55e)](extension.yml)
 [![Spec Kit](https://img.shields.io/badge/Spec%20Kit-compatible-2563eb)](https://spec-kit.dev)
 [![Requires](https://img.shields.io/badge/requires-architecture--guard-8b5cf6)](https://github.com/DyanGalih/spec-kit-architecture-guard)
 [![Laravel](https://img.shields.io/badge/Laravel-10.x%20%E2%80%93%2013.x-ef4444)](https://laravel.com/docs/13.x)
@@ -72,14 +72,14 @@ Permission filtering, access control, or business decisions in React/Vue/Svelte 
 Sensitive fields (API tokens, internal IDs) in `HandleInertiaRequests::share()` shared globally to every page.
 
 ### Pattern Violations
-When the Constitution adopts Actions or Repositories, flags code that bypasses them.
+When your `architecture_constitution.md` adopts Actions or Repositories, flags code that bypasses them.
 
 ## When NOT To Use This
 
 - **Your project isn't Laravel** — use a different adapter or none
 - **Simple CRUD app with 5 routes** — the overhead isn't worth it
 - **You haven't set up Architecture Guard yet** — install the core extension first
-- **Your Constitution doesn't define Laravel conventions** — the adapter checks against your Constitution, so define your rules first
+- **Your project hasn't initialized architecture rules** — use the `init` command to add Laravel-specific rules to your `architecture_constitution.md`.
 
 ---
 
@@ -90,20 +90,14 @@ When the Constitution adopts Actions or Repositories, flags code that bypasses t
    specify extension add architecture-guard
    ```
 
-2. Install this adapter:
-   ```text
-   specify extension add architecture-guard-laravel
-   ```
+    ```text
+    specify extension add architecture-guard-laravel
+    ```
 
-3. Add Laravel-specific rules to your `CONSTITUTION.md`:
-   ```markdown
-   ## Laravel Conventions
-   - Controllers must be thin: validate → delegate → respond
-   - Use Form Requests for validation with more than 3 rules
-   - Use API Resources for all JSON and Inertia responses
-   - Business logic lives in Actions or Services, not Controllers, Models, or Livewire components
-   - Do not pass raw Eloquent models to Inertia::render()
-   ```
+3. Initialize Laravel architecture rules in your `architecture_constitution.md`:
+    ```text
+    /speckit.architecture-guard-laravel.init
+    ```
 
 4. Run architecture review — the adapter activates automatically:
    ```text
@@ -124,7 +118,7 @@ specify extension add architecture-guard-laravel
 
 ```text
 specify extension add architecture-guard-laravel --from \
-  https://github.com/DyanGalih/architecture-guard-laravel/archive/refs/tags/v1.0.1.zip
+  https://github.com/DyanGalih/architecture-guard-laravel/archive/refs/tags/v1.1.0.zip
 ```
 
 ### Local Development
@@ -168,7 +162,7 @@ architecture-guard-laravel/
 This adapter does not:
 
 - Replace the core Architecture Guard rules
-- Override the Constitution
+- Override your project's technical constitution
 - Act as a PHP linter or static analyzer (use Pint, PHPStan, Larastan for that)
 - Require any runtime tools or Composer packages
 - Block implementation by default

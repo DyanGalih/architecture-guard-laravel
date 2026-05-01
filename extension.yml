@@ -2,7 +2,7 @@ schema_version: '1.0'
 extension:
   id: 'architecture-guard-laravel'
   name: 'Architecture Guard — Laravel Adapter'
-  version: '1.0.1'
+  version: '1.1.0'
   description: 'Laravel-specific adapter for architecture-guard. Maps generic architecture rules to Laravel conventions.'
   author: 'DyanGalih'
   repository: 'https://github.com/DyanGalih/architecture-guard-laravel'
@@ -17,6 +17,9 @@ provides:
     - name: 'speckit.architecture-guard-laravel.guidance'
       file: 'commands/laravel-guidance.md'
       description: 'Apply Laravel-specific architecture conventions during architecture review.'
+    - name: 'speckit.architecture-guard-laravel.init'
+      file: 'commands/init.md'
+      description: 'Initialize Laravel-specific architecture rules in your technical constitution.'
 tags:
   - 'architecture'
   - 'laravel'
