@@ -2,7 +2,7 @@
 
 > Laravel-specific architectural rules and best practices for Architecture Guard.
 
-[![Version](https://img.shields.io/badge/version-1.1.3-22c55e)](extension.yml)
+[![Version](https://img.shields.io/badge/version-1.1.4-22c55e)](extension.yml)
 [![Architecture Guard](https://img.shields.io/badge/Requires-architecture--guard-2563eb)](https://github.com/DyanGalih/spec-kit-architecture-guard)
 [![Laravel](https://img.shields.io/badge/Laravel-11.x%20--%2013.x-f05340)](https://laravel.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-f59e0b)](LICENSE)
@@ -46,6 +46,25 @@ Once installed and initialized, this extension operates **automatically in the b
 - **Do** call the core **Architecture Guard** commands (e.g., `/speckit.architecture-guard.architecture-workflow`).
 
 The core engine will detect this adapter and automatically apply the Laravel-specific rules to your project.
+
+---
+
+## Synergy: Laravel Boost (MCP)
+
+Architecture Guard runs significantly better when paired with a Laravel-aware MCP server like **Laravel Boost**.
+
+- **High-Definition Evidence**: Instead of "guessing" relationships, the AI can query your app's actual routes, bindings, and models in real-time.
+- **Tailored Initialization**: Running `/init` with an active MCP allows the AI to "audit" your project first and write a constitution that matches your existing patterns (Inertia, Livewire, etc.).
+
+## The Knowledge Loop
+
+By combining these tools, you create a self-improving development environment:
+
+1.  **Inspect (Laravel Boost)**: Use the MCP to find real-time architectural truths and edge cases.
+2.  **Capture (Memory Hub)**: Persist "Durable Lessons" discovered via MCP into `docs/memory/` to avoid repeating mistakes.
+3.  **Govern (Architecture Guard)**: Codify repeated patterns into the **Architecture Constitution** to reduce the need for future exploration.
+
+> **Result**: Better context, fewer tokens, and zero architectural drift.
 
 ---
 
@@ -162,7 +181,7 @@ specify extension add architecture-guard-laravel
 
 ```text
 specify extension add architecture-guard-laravel --from \
-  https://github.com/DyanGalih/architecture-guard-laravel/archive/refs/tags/v1.1.3.zip
+  https://github.com/DyanGalih/architecture-guard-laravel/archive/refs/tags/v1.1.4.zip
 ```
 
 ### Local Development
