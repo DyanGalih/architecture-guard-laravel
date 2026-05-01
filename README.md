@@ -2,7 +2,7 @@
 
 > Laravel-specific architectural rules and best practices for Architecture Guard.
 
-[![Version](https://img.shields.io/badge/version-1.1.4-22c55e)](extension.yml)
+[![Version](https://img.shields.io/badge/version-1.1.5-22c55e)](extension.yml)
 [![Architecture Guard](https://img.shields.io/badge/Requires-architecture--guard-2563eb)](https://github.com/DyanGalih/spec-kit-architecture-guard)
 [![Laravel](https://img.shields.io/badge/Laravel-11.x%20--%2013.x-f05340)](https://laravel.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-f59e0b)](LICENSE)
@@ -15,6 +15,31 @@ This extension is an **Adapter**. It does not run its own workflow; it provides 
 | --- | --- | --- |
 | **`architecture-guard`** | **The Engine** | Lifecycle, Commands, Drift Detection logic. |
 | **`architecture-guard-laravel`** | **The Brain** | Laravel conventions, FormRequests, API Resources, Eloquent rules. |
+
+---
+
+## Command Options: Laravel Focus Mapping
+
+When running core commands like `/speckit.architecture-guard.architecture-review`, you can use **Focus Areas** to target specific Laravel primitives:
+
+| Focus Area | Laravel Primitives Targeted |
+| --- | --- |
+| **`db`** | Eloquent Models, Scopes, Migrations, Query Builder, and Repositories. |
+| **`api`** | API Resources, Form Requests, Routing Contracts, and JSON serialization. |
+| **`async`** | Queued Jobs, Event Listeners, Broadcasting Channels, and Horizon config. |
+| **`general`** | Full cross-boundary review (e.g., Controller → Service → Model). |
+
+### Example Enterprise Commands:
+
+**Deep Eloquent & Migration Audit:**
+```text
+/speckit.architecture-guard.architecture-review db
+```
+
+**API Contract & Validation Check:**
+```text
+/speckit.architecture-guard.architecture-review api
+```
 
 ---
 
@@ -181,7 +206,7 @@ specify extension add architecture-guard-laravel
 
 ```text
 specify extension add architecture-guard-laravel --from \
-  https://github.com/DyanGalih/architecture-guard-laravel/archive/refs/tags/v1.1.4.zip
+  https://github.com/DyanGalih/architecture-guard-laravel/archive/refs/tags/v1.1.5.zip
 ```
 
 ### Local Development
