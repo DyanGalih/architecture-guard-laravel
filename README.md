@@ -1,9 +1,22 @@
-# 🛡️ Architecture Guard — Laravel Adapter
+# 🐘 Laravel Architecture Adapter
 
-[![Version](https://img.shields.io/badge/version-1.1.0-22c55e)](extension.yml)
-[![Spec Kit](https://img.shields.io/badge/Spec%20Kit-compatible-2563eb)](https://spec-kit.dev)
-[![Requires](https://img.shields.io/badge/requires-architecture--guard-8b5cf6)](https://github.com/DyanGalih/spec-kit-architecture-guard)
-[![Laravel](https://img.shields.io/badge/Laravel-10.x%20%E2%80%93%2013.x-ef4444)](https://laravel.com/docs/13.x)
+> Laravel-specific architectural rules and best practices for Architecture Guard.
+
+[![Version](https://img.shields.io/badge/version-1.1.1-22c55e)](extension.yml)
+[![Architecture Guard](https://img.shields.io/badge/Requires-architecture--guard-2563eb)](https://github.com/DyanGalih/spec-kit-architecture-guard)
+[![Laravel](https://img.shields.io/badge/Laravel-11.x%20--%2013.x-f05340)](https://laravel.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-f59e0b)](LICENSE)
+
+## Role in the Suite
+
+This extension is an **Adapter**. It does not run its own workflow; it provides the **Laravel-specific domain knowledge** that the core Architecture Guard engine uses to validate your project.
+
+| System | Role | Provided Knowledge |
+| --- | --- | --- |
+| **`architecture-guard`** | **The Engine** | Lifecycle, Commands, Drift Detection logic. |
+| **`architecture-guard-laravel`** | **The Brain** | Laravel conventions, FormRequests, API Resources, Eloquent rules. |
+
+---
 
 ## What Is This?
 
@@ -118,7 +131,7 @@ specify extension add architecture-guard-laravel
 
 ```text
 specify extension add architecture-guard-laravel --from \
-  https://github.com/DyanGalih/architecture-guard-laravel/archive/refs/tags/v1.1.0.zip
+  https://github.com/DyanGalih/architecture-guard-laravel/archive/refs/tags/v1.1.1.zip
 ```
 
 ### Local Development
