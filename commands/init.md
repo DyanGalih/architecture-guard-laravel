@@ -58,6 +58,12 @@ Ask the user:
 - **Hybrid**: Form Requests for complex logic, inline validation for simple CRUD.
 - **Flexible**: Use whatever is most efficient for the task.
 
+## Step 5 — Coding Standards & Imports
+Ask the user:
+"What are your standards for importing classes?"
+- **Top of File (Recommended)**: Always import classes at the top of the file using `use` statements. Avoid inline Fully Qualified Class Names (FQCNs) like `\App\Models\User`.
+- **Flexible**: Inline FQCNs are allowed.
+
 ---
 
 # Reference Rules to Generate
@@ -101,5 +107,5 @@ Based on the interview, generate a `## Laravel Conventions` section for `archite
 
 1. **Analyze**: Read existing constitution files to see if Laravel rules already exist.
 2. **Propose**: Show the user the proposed additions/updates.
-3. **Apply**: Append the new section to `architecture_constitution.md` or update the existing `## Laravel Conventions` section.
-4. **Clean up**: If the user has Laravel rules in `constitution.md`, suggest moving them to `architecture_constitution.md` to align with the new split structure.
+3. **Apply**: Append the architectural sections to `architecture_constitution.md` (e.g., `## Laravel Conventions`). Append the coding standard rules (like top-of-file imports) to the general `constitution.md` under a `## Coding Standards` section.
+4. **Clean up**: If the user has architectural rules in `constitution.md`, suggest moving them to `architecture_constitution.md` to align with the split structure.
