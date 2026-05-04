@@ -12,6 +12,7 @@ It ensures that Architecture Guard understands:
 * Your **Frontend Stack** (Inertia, Livewire, REST API, or Blade)
 * Your **Business Logic Pattern** (Actions, Services, or standard Controllers)
 * Your **Validation & Contract Standards** (Form Requests, API Resources, etc.)
+* **Framework Adapter Installation**: Automatically configures the core Architecture Guard engine to be Laravel-aware.
 
 ---
 
@@ -108,4 +109,5 @@ Based on the interview, generate a `## Laravel Conventions` section for `archite
 1. **Analyze**: Read existing constitution files to see if Laravel rules already exist.
 2. **Propose**: Show the user the proposed additions/updates.
 3. **Apply**: Append the architectural sections to `architecture_constitution.md` (e.g., `## Laravel Conventions`). Append the coding standard rules (like top-of-file imports) to the general `constitution.md` under a `## Coding Standards` section.
-4. **Clean up**: If the user has architectural rules in `constitution.md`, suggest moving them to `architecture_constitution.md` to align with the split structure.
+4. **Install Adapter**: Copy `prompts/architecture-guard-adapter.md` from the extension to the project's `.claude/prompts/architecture-guard-adapter.md`. This enables automatic Laravel-awareness in the core Architecture Guard engine.
+5. **Clean up**: If the user has architectural rules in `constitution.md`, suggest moving them to `architecture_constitution.md` to align with the split structure.

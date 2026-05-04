@@ -2,7 +2,7 @@
 
 > Laravel-specific architectural rules and best practices for Architecture Guard.
 
-[![Version](https://img.shields.io/badge/version-1.1.7-22c55e)](extension.yml)
+[![Version](https://img.shields.io/badge/version-1.1.8-22c55e)](extension.yml)
 [![Architecture Guard](https://img.shields.io/badge/Requires-architecture--guard-2563eb)](https://github.com/DyanGalih/spec-kit-architecture-guard)
 [![Laravel](https://img.shields.io/badge/Laravel-11.x%20--%2013.x-f05340)](https://laravel.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-f59e0b)](LICENSE)
@@ -14,7 +14,7 @@ This extension is an **Adapter**. It does not run its own workflow; it provides 
 | System | Role | Provided Knowledge |
 | --- | --- | --- |
 | **`architecture-guard`** | **The Engine** | Lifecycle, Commands, Drift Detection logic. |
-| **`architecture-guard-laravel`** | **The Brain** | Laravel conventions, FormRequests, API Resources, Eloquent rules. |
+| **`architecture-guard-laravel`** | **The Brain** | Laravel conventions, FormRequests, API Resources, Eloquent rules via background adapter. |
 
 ---
 
@@ -58,8 +58,8 @@ This extension is an **Adapter**. It does not run its own workflow; it provides 
 
 | Milestone | Recommended Command | Phase Integration | Purpose |
 | --- | --- | --- | --- |
-| **Milestone: Inject** | `init` | Once at setup | **Inject Laravel-specific rules** into your `architecture_constitution.md`. |
-| **Milestone: Review** | `architecture-workflow` | Anytime | Core engine runs, using the Laravel rules you injected. |
+| **Milestone: Inject** | `init` | Once at setup | **Inject Laravel-specific rules** and install the **Framework Adapter**. |
+| **Milestone: Review** | `architecture-workflow` | Anytime | Core engine runs, automatically detecting the Laravel adapter. |
 
 ---
 
@@ -232,8 +232,8 @@ architecture-guard-laravel/
 ├── LICENSE
 ├── README.md
 ├── extension.yml                      ← Extension manifest
-├── commands/
-│   └── laravel-guidance.md            ← Laravel adapter rules (644 lines, self-contained)
+├── prompts/
+│   └── architecture-guard-adapter.md   ← Laravel adapter rules (644 lines, self-contained)
 └── scripts/
     └── test-install.sh                ← Smoke tests
 ```
